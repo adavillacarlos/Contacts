@@ -1,4 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAction } from "@reduxjs/toolkit";
+
+
+export const setContactsError = createAction('setContactsError'); 
+export const newContactError = createAction('newContactError'); 
+export const editContactError = createAction('editContactError'); 
+export const deleteContactError = createAction('deleteContactError'); 
+
 
 export const contactsSlice = createSlice({
   name: "contacts",
