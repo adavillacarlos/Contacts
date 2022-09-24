@@ -7,7 +7,7 @@ import ContactForm from "../Form/ContactForm";
 import ContactEditModal from "../Modal/ContactEditModal"
 export default function ContactsList() {
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contactsReducer.contacts);
+  const contacts = useSelector((state) => state.contactsSlice.contacts);
 
   useEffect(() => {
     GetContacts(dispatch);
