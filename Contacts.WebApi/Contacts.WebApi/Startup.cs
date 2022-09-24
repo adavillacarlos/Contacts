@@ -34,8 +34,15 @@ namespace Contacts.WebApi
             services.AddSwaggerDocument(settings =>
             {
                 settings.Title = "Contacts";
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("ContactsPolicy", builder => {
+                    builder.WithOrigins("*")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod(); 
+                });
             }); 
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +56,8 @@ namespace Contacts.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("ContactsPolicy"); 
 
             app.UseAuthorization();
 

@@ -1,33 +1,17 @@
-import { ActionCreators } from "../app/contactsReducer";
+import axios from "axios";
+import {ActionCreators} from "../app/contactsReducer";
+
 //WEB API
+
+const axiosInstance = axios.create({
+  baseURL: "https://localhost:44342/Contacts",
+});
 
 export const GetContacts = async (dispatch) => {
   try {
     //api call
-    const contacts = [
-      {
-        id: 1,
-        firstName: "Ada",
-        lastName: "Villacarlos",
-        billingAddress: "Cebu City",
-        deliveryAddress: "Surigao City",
-      },
-      {
-        id: 2,
-        firstName: "Romel",
-        lastName: "Recabo",
-        billingAddress: "Manila",
-        deliveryAddress: "Makati City",
-      },
-      {
-        id: 3,
-        firstName: "Ronerr",
-        lastName: "Patalinghug",
-        billingAddress: "Davao City ",
-        deliveryAddress: "Zamboanga City",
-      },
-    ];
-    dispatch(ActionCreators.setContacts(contacts));
+    const { data } = await axiosInstance.get();
+    dispatch(ActionCreators.setContacts(data));
   } catch (error) {
     console.log("Error");
   }
@@ -36,39 +20,29 @@ export const GetContacts = async (dispatch) => {
 export const NewContact = async (dispatch, contact) => {
   try {
     //api call
-    dispatch(
-      ActionCreators.newContacts({
-        id: 10,
-        firstName: contact.firstName,
-        lastName: contact.lastName,
-        billingAddress: contact.billingAddress,
-        deliveryAddress: contact.deliveryAddress,
-      })
-    );
+    const { data } = await axiosInstance.post('', contact);
+    dispatch(ActionCreators.newContact(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const EditContact = async (dispatch, contact) => {
+  try {
+    //api call
+    await axiosInstance.put('', contact);
+    dispatch(ActionCreators.editContact(contact));
   } catch (error) {
     console.log("Error");
   }
 };
 
-
-export const EditContact = async (dispatch, contact) => {
+export const DeleteContact = async (dispatch, contact) => {
   try {
-    //api call 
-    dispatch(ActionCreators.editContact(contact)); 
+    //api call
+    await axiosInstance.delete('', {data: {...contact}});
+    dispatch(ActionCreators.deleteContact(contact));
   } catch (error) {
     console.log("Error");
   }
-}
-
-export const DeleteContact = async (dispatch, contact) => {
-  
-  try {
-    //api call
-    dispatch(ActionCreators.deleteContact(contact));
-  } catch (error) {
-    console.log("Error"); 
-  }
-}
-
-
-
+};
