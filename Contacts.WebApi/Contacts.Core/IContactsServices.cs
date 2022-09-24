@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Contacts.DB;
+using Contacts.Core.DTO;
 
 namespace Contacts.Core
 {
@@ -7,7 +7,7 @@ namespace Contacts.Core
     {
         List<Contact> GetContacts();
         Contact GetContact(int id);
-        Contact CreateContact(Contact contact);
+        Contact CreateContact(DB.Contact contact);
         void DeleteContact(Contact contact);
         Contact EditContact(Contact contact); 
     }

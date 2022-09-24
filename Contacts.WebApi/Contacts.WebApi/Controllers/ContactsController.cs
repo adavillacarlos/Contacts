@@ -1,9 +1,11 @@
 ﻿using Contacts.Core;
-using Contacts.DB;
+using Contacts.Core.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Contacts.WebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ContactsController : ControllerBase
@@ -31,7 +33,7 @@ namespace Contacts.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateContact(Contact contact)
+        public IActionResult CreateContact(DB.Contact contact)
         {
             var newContact = _contactsServices.CreateContact(contact);
             return CreatedAtRoute("GetContact", new { newContact.Id}, newContact); 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Contacts.DB
 {
@@ -12,6 +13,8 @@ namespace Contacts.DB
         public string BillingAddress { get; set; }
         public string DeliveryAddress { get; set; }
 
+        [ForeignKey("UserId")]
+        public User User { get; set; }
 
     }
 }

@@ -76,3 +76,7 @@ D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\NSwag.
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Abstractions.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\bin\Debug\netcoreapp3.1\System.Text.Json.dll

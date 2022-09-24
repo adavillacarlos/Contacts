@@ -2,7 +2,6 @@ import {
   newContact,
   editContact,
   deleteContact,
-  setContacts, 
   setContactsError,
   editContactError,
   deleteContactError,
