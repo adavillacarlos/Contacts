@@ -292,3 +292,16 @@
       font-weight: bold;
   }
 }
+
+
+.bordert {
+  border-top: 1px solid #aaa;
+  position: relative
+}
+
+.bordert:after {
+  position: absolute;
+  top: -13px;
+  background-color: #fff;
+  padding: 0px 8px
+}

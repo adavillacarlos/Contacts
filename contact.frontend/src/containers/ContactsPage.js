@@ -4,7 +4,7 @@ import ContactsList from "../components/List/ContactsList";
 import Title from "../components/Title/Title";
 import { ToastContainer } from "react-toastify";
 
-export default function Contacts() {
+export default function ContactsPage() {
   return (
     <div style={{ width: "60%", margin: "auto" }}>
        <ToastContainer />

@@ -13,7 +13,14 @@ import {
 //WEB API
 
 const axiosInstance = axios.create({
-  baseURL: "https://localhost:44342/Contacts",
+  baseURL: `${process.env.REACT_APP_BASE_URL}/Contacts`,
+});
+
+axiosInstance.interceptors.request.use((config) => {
+  config.headers = {
+    authorization: "Bearer " + sessionStorage.getItem("token"),
+  };
+  return config;
 });
 
 export const GetContacts = async (dispatch) => {
@@ -22,7 +29,7 @@ export const GetContacts = async (dispatch) => {
     const { data } = await axiosInstance.get();
     dispatch(setContacts(data));
   } catch (error) {
-    dispatch(setContactsError()); 
+    dispatch(setContactsError());
   }
 };
 
