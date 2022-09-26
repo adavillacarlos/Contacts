@@ -6,7 +6,7 @@ export default function ContactModal({show, onHide, contact, setIsEditing}) {
     <div>
       <Modal show={show} onHide={() => setIsEditing()}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New User</Modal.Title>
+          <Modal.Title>Edit Contact</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ContactForm contact={contact} setIsEditing={setIsEditing}/>

@@ -47,6 +47,7 @@ export default function ContactForm({ contact, setIsEditing }) {
               billingAddress: billingAddress,
               deliveryAddress: deliveryAddress,
             });
+            setIsEditing(false); 
           } else {
             //edit contact
             EditContact(dispatch, {
