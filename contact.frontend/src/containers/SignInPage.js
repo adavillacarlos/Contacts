@@ -1,8 +1,7 @@
 import React from "react";
-import GoogleIcon from "@mui/icons-material/Google";
-
 import { ToastContainer } from "react-toastify";
 import SignInForm from "../components/Form/SignInForm";
+import ThirdPartySignIns from "../components/ThirdParty/ThirdPartySignIns";
 
 export default function SignInPage() {
   return (
@@ -17,10 +16,9 @@ export default function SignInPage() {
             <div className="panel-body p-3">
               <SignInForm />
             </div>
-            <div className="mx-3 my-2 py-2 bordert">
+            <div className="mx-3 py-2 bordert">
               <div className="text-center py-3">
-                Sign In with <br /> <br />
-                <GoogleIcon fontSize="large" />
+                <ThirdPartySignIns />
               </div>
             </div>
           </div>

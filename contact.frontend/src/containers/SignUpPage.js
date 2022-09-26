@@ -1,10 +1,9 @@
 import React from "react";
-import GoogleIcon from "@mui/icons-material/Google";
 import { ToastContainer } from "react-toastify";
 import SignUpForm from "../components/Form/SignUpForm";
+import ThirdPartySignIns from "../components/ThirdParty/ThirdPartySignIns";
+
 export default function SignUpPage() {
- 
-   
 
   return (
     <div className="container">
@@ -20,8 +19,7 @@ export default function SignUpPage() {
             </div>
             <div className="mx-3 my-2 py-2 bordert">
               <div className="text-center py-3">
-                Sign Up with <br /> <br />
-                <GoogleIcon fontSize="large" />
+                     <ThirdPartySignIns />
               </div>
             </div>
           </div>

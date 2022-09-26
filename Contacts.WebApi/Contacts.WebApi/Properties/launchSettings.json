@@ -13,11 +13,12 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "JWT_SECRET": "This is a secret",
-        "JWT_ISSUER": "My Contacts"
-      }
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "JWT_SECRET": "This is a secret",
+            "JWT_ISSUER": "My Contacts",
+            "CLIENT_ID": "882926934134-b3eb5o11kt5bf3qgqjuaj34563v3d7f0.apps.googleusercontent.com"
+        }
     },
     "Contacts.WebApi": {
       "commandName": "Project",
@@ -27,7 +28,8 @@
         "environmentVariables": {
             "ASPNETCORE_ENVIRONMENT": "Development",
             "JWT_SECRET": "This is a secret",
-            "JWT_ISSUER": "My Contacts"
+            "JWT_ISSUER": "My Contacts",
+            "CLIENT_ID": "882926934134-b3eb5o11kt5bf3qgqjuaj34563v3d7f0.apps.googleusercontent.com"
         }
     }
   }

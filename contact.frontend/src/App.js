@@ -12,12 +12,15 @@ import SignUpPage from "./containers/SignUpPage";
 function App() {
   const { isLoggedIn } = useSelector((state) => state.authenticationSlice);
   const dispatch = useDispatch();
+
+
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem('token');
     if (token !== undefined && token !== null) {
-      dispatch(userAuthenticated({ token }));
+      dispatch(userAuthenticated({ token: token }))
     }
   }, []);
+
 
   return (
     <BrowserRouter>
