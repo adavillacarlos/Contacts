@@ -6,6 +6,8 @@ import {
   NewContact,
 } from "../../services/contacts";
 import { useDispatch } from "react-redux";
+import { contactSchema } from "../../middlewares/ValidationMiddleware";
+import { toast } from "react-toastify";
 
 export default function ContactForm({ contact, setIsEditing }) {
   const [firstName, setFirstName] = useState("");
@@ -29,38 +31,47 @@ export default function ContactForm({ contact, setIsEditing }) {
   }, [contact]);
 
   const handleDelete = () => {
-    DeleteContact(dispatch, contact); 
-    setIsEditing(false); 
-  }
+    DeleteContact(dispatch, contact);
+    setIsEditing(false);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let formData = {
+      firstName: e.target[0].value,
+      lastName: e.target[1].value,
+      billingAddress: e.target[2].value,
+      deliveryAddress: e.target[3].value,
+    };
+    const isValid = await contactSchema.isValid(formData);
+    if (isNewContact) {
+      //create new contact
+      if (isValid) {
+        NewContact(dispatch, {
+          firstName: firstName,
+          lastName: lastName,
+          billingAddress: billingAddress,
+          deliveryAddress: deliveryAddress,
+        });
+        setIsEditing(false);
+      } else {
+        toast.warn("Please fill up all the fields");
+      }
+    } else {
+      EditContact(dispatch, {
+        id: contact.id,
+        firstName: firstName,
+        lastName: lastName,
+        billingAddress: billingAddress,
+        deliveryAddress: deliveryAddress,
+      });
+      setIsEditing(false);
+    }
+  };
 
   return (
     <div>
-      <Form
-        className="mt-3"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (isNewContact) {
-            //create new contact
-            NewContact(dispatch, {
-              firstName: firstName,
-              lastName: lastName,
-              billingAddress: billingAddress,
-              deliveryAddress: deliveryAddress,
-            });
-            setIsEditing(false); 
-          } else {
-            //edit contact
-            EditContact(dispatch, {
-              id: contact.id,
-              firstName: firstName,
-              lastName: lastName,
-              billingAddress: billingAddress,
-              deliveryAddress: deliveryAddress,
-            });
-            setIsEditing(false);
-          }
-        }}
-      >
+      <Form className="mt-3" onSubmit={handleSubmit}>
         <Row>
           <Col sm={6}>
             <Form.Label>First Name</Form.Label>

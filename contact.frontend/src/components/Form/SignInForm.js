@@ -3,18 +3,29 @@ import { useDispatch } from "react-redux";
 import { SignIn } from "../../services/authentication";
 import { NavLink } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import { signInSchema } from "../../middlewares/ValidationMiddleware";
+import { toast } from "react-toastify";
 
 export default function SignInForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let formData = {
+      username: e.target[0].value,
+      password: e.target[1].value,
+    };
+    const isValid = await signInSchema.isValid(formData);
+    isValid
+      ?  SignIn(dispatch, { username, password })
+      : toast.warn("Please fill up all the fields");
+  };
+
   return (
     <Form
-      onSubmit={(e) => {
-        e.preventDefault();
-        SignIn(dispatch, { username, password });
-      }}
+      onSubmit={handleSubmit}
     >
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>

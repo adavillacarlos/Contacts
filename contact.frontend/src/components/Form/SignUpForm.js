@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { SignUp } from "../../services/authentication";
 import { NavLink } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import { signUpSchema } from "../../middlewares/ValidationMiddleware";
+import { toast } from "react-toastify";
 
 export default function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -11,13 +13,22 @@ export default function SignUpForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let formData = {
+      username: e.target[0].value,
+      email: e.target[1].value,
+      password:e.target[2].value,
+      confirmPassword:e.target[3].value
+    };
+    const isValid = await signUpSchema.isValid(formData);
+    isValid
+      ? SignUp(dispatch, { username, email, password })
+      : toast.warn("Please fill up all the fields");
+  };
+
   return (
-    <Form
-      onSubmit={(e) => {
-        e.preventDefault();
-        SignUp(dispatch, { username, email, password });
-      }}
-    >
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
         <Form.Control
