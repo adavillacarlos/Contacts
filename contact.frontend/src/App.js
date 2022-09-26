@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { userAuthenticated } from "./app/authenticationSlice";
 import Navbar from "./components/Navbar/Navbar";
+
 import ContactsPage from "./containers/ContactsPage";
 import ErrorPage from "./containers/ErrorPage";
 import SignInPage from "./containers/SignInPage";

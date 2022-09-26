@@ -2,9 +2,8 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import ContactForm from "../Form/ContactForm";
 export default function ContactModal({show, onHide, contact, setIsEditing}) {
-  return (
+   return (
     <div>
-      {" "}
       <Modal show={show} onHide={() => setIsEditing()}>
         <Modal.Header closeButton>
           <Modal.Title>Add New User</Modal.Title>

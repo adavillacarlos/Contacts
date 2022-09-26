@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Form, Button } from "react-bootstrap";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useDispatch } from "react-redux";
 import { SignIn } from "../services/authentication";
+import { NavLink } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 export default function SignInPage() {
   const [username, setUsername] = useState("");
@@ -11,6 +13,7 @@ export default function SignInPage() {
 
   return (
     <div className="container">
+    <ToastContainer />
       <div className="row">
         <div className="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3 p-5">
           <div className="panel border bg-white">
@@ -45,7 +48,7 @@ export default function SignInPage() {
                   Sign In
                 </Button>
                 <div className="text-center pt-4 text-muted">
-                  Don't have an account? Sign Up
+                  Don't have an account?  <NavLink to="/signup"> Sign Up</NavLink>
                 </div>
               </Form>
             </div>

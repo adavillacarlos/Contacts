@@ -7,6 +7,9 @@ import {
   deleteContactError,
   newContactError,
 } from "../app/contactsSlice";
+
+import { logoutError, userAuthenticatedError } from "../app/authenticationSlice";
+
 import { toast } from "react-toastify";
 
 const ToastMiddleware = () => (next) => (action) => {
@@ -32,6 +35,12 @@ const ToastMiddleware = () => (next) => (action) => {
     case newContactError.type:
       toast.error("Failed to add new contact");
       break;
+    case logoutError.type:
+      toast.error("Failed to logout"); 
+      break;
+    case userAuthenticatedError.type:
+      toast.error("Failed to login"); 
+      break; 
     default:
       break;
   }

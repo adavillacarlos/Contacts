@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Form, FormControl, Row, Col, Button } from "react-bootstrap";
-import { EditContact, DeleteContact, NewContact } from "../../services/contacts";
+import {
+  EditContact,
+  DeleteContact,
+  NewContact,
+} from "../../services/contacts";
 import { useDispatch } from "react-redux";
 
 export default function ContactForm({ contact, setIsEditing }) {
@@ -23,6 +27,11 @@ export default function ContactForm({ contact, setIsEditing }) {
       setIsNewContact(true);
     }
   }, [contact]);
+
+  const handleDelete = () => {
+    DeleteContact(dispatch, contact); 
+    setIsEditing(false); 
+  }
 
   return (
     <div>
@@ -105,8 +114,10 @@ export default function ContactForm({ contact, setIsEditing }) {
               </Button>
             ) : (
               <div>
-                <Button className="ml-3" variant="danger"
-                  onClick={() => DeleteContact(dispatch, contact)}
+                <Button
+                  className="ml-3"
+                  variant="danger"
+                  onClick={handleDelete()}
                 >
                   Delete
                 </Button>

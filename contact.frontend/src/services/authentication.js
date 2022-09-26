@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userAuthenticated } from "../app/authenticationSlice";
+import { userAuthenticated, userAuthenticatedError } from "../app/authenticationSlice";
 
 const axiosInstance = axios.create({
   baseURL: `${process.env.REACT_APP_BASE_URL}/Authentication`,
@@ -10,8 +10,9 @@ export const SignUp = async (dispatch, credentials) => {
     // api call
     const { data } = await axiosInstance.post("/signup", credentials);
     dispatch(userAuthenticated(data));
+   
   } catch {
-    console.log("Error!");
+    dispatch(userAuthenticatedError()); 
   }
 };
 
@@ -20,6 +21,6 @@ export const SignIn = async (dispatch, credentials) => {
     const { data } = await axiosInstance.post("/signin", credentials);
     dispatch(userAuthenticated(data));
   } catch (error) {
-    console.log("Error");
+    dispatch(userAuthenticatedError()); 
   }
 };

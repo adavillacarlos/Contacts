@@ -1,4 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAction } from "@reduxjs/toolkit";
+
+export const userAuthenticatedError = createAction('userAuthenticatedError'); 
+export const logoutError = createAction('logoutError'); 
+
 
 export const authenticationSlice = createSlice({
   name: "authentication",

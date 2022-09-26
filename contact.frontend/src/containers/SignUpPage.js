@@ -3,17 +3,20 @@ import { Form, Button } from "react-bootstrap";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useDispatch } from "react-redux";
 import { SignUp } from "../services/authentication";
-
+import { NavLink } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 export default function SignUpPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+   
   const dispatch = useDispatch();
 
   return (
     <div className="container">
+        <ToastContainer />
+
       <div className="row">
         <div className="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3 p-5">
           <div className="panel border bg-white">
@@ -72,7 +75,8 @@ export default function SignUpPage() {
                   Sign Up
                 </Button>
                 <div className="text-center pt-4 text-muted">
-                  Already have an account? Sign In
+                  Already have an account? {" "}
+                  <NavLink to="/signin"> Sign In</NavLink>
                 </div>
               </Form>
             </div>
