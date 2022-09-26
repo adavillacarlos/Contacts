@@ -117,7 +117,7 @@ export default function ContactForm({ contact, setIsEditing }) {
                 <Button
                   className="ml-3"
                   variant="danger"
-                  onClick={handleDelete()}
+                  onClick={handleDelete}
                 >
                   Delete
                 </Button>

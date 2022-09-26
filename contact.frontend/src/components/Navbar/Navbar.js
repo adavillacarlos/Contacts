@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Nav } from "react-bootstrap";
+import { Button, Nav } from "react-bootstrap";
 import { logout } from "../../app/authenticationSlice";
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
         {isLoggedIn && (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <span
+              <Button
                 className="nav-link"
                 href="/signin"
                 onClick={() => {
@@ -24,7 +24,7 @@ export default function Navbar() {
                 }}
               >
                 Logout
-              </span>
+              </Button>
             </li>
           </ul>
         )}

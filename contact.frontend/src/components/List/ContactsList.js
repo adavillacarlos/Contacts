@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { GetContacts } from "../../services/contacts";
 import EditIcon from "@mui/icons-material/Edit";
-import ContactForm from "../Form/ContactForm";
 import ContactEditModal from "../Modal/ContactEditModal";
 import { DataGrid } from "@mui/x-data-grid";
 
@@ -12,6 +11,8 @@ export default function ContactsList() {
   const contacts = useSelector((state) => state.contactsSlice.contacts);
   const [isEditing, setIsEditing] = useState(false);
   const [contact, setContact] = useState();
+  const [pageSize, setPageSize] = useState(10);
+
 
   //Show Modal
   const [show, setShow] = useState(false);
@@ -73,6 +74,11 @@ export default function ContactsList() {
         rows={contacts}
         columns={columns}
         sx={contactsTableHeight}
+        pagination
+        pageSize={pageSize}
+        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+        rowsPerPageOptions={[5, 10, 25]}
+
       />
     </div>
   );
