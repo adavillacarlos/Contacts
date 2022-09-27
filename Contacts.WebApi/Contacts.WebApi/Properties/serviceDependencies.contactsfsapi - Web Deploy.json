@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/contactsfsdbserver/databases/ContactsDB",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DB_CONNECTION_STRING",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

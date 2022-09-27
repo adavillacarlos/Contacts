@@ -13,8 +13,6 @@ D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contac
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.csproj.CoreCompileInputs.cache
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Contacts.WebApi.StaticWebAssets.Manifest.cache
-D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Contacts.WebApi.StaticWebAssets.xml
-D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\Contacts.WebApi.styles.css
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.RazorTargetAssemblyInfo.cache
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.dll
 D:\Code\fsProject\Contacts.WebApi\Contacts.WebApi\obj\Debug\netcoreapp3.1\Contacts.WebApi.pdb

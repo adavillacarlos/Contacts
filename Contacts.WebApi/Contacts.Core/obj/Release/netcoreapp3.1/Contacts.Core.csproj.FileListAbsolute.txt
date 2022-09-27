@@ -1,0 +1,13 @@
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\bin\Release\netcoreapp3.1\Contacts.Core.deps.json
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\bin\Release\netcoreapp3.1\Contacts.Core.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\bin\Release\netcoreapp3.1\Contacts.Core.pdb
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\bin\Release\netcoreapp3.1\Contacts.DB.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\bin\Release\netcoreapp3.1\Contacts.DB.pdb
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.csproj.AssemblyReference.cache
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.AssemblyInfoInputs.cache
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.AssemblyInfo.cs
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.csproj.CoreCompileInputs.cache
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.csproj.CopyComplete
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.dll
+D:\Code\fsProject\Contacts.WebApi\Contacts.Core\obj\Release\netcoreapp3.1\Contacts.Core.pdb
