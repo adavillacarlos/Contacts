@@ -28,7 +28,7 @@ export const GetContacts = async (dispatch) => {
     //api call
     const { data } = await axiosInstance.get();
     dispatch(setContacts(data));
-  } catch (error) {
+  } catch (error) { 
     dispatch(setContactsError());
   }
 };
